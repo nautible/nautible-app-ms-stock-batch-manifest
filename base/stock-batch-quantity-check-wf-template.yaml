@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: nautible-app-ms-stock-batch-quantity-check-wf-template
+  namespace: nautible-app-ms
+  labels:
+    app.kubernetes.io/name: nautible-app-ms-stock-batch
+    app.kubernetes.io/instance: nautible-app-ms-stock-batch
+    app.kubernetes.io/version: 1.0.0
+    app.kubernetes.io/component: app
+    app.kubernetes.io/part-of: nautible
+    app.kubernetes.io/managed-by: manual
+spec:
+  metadata:
+    labels:
+      app.kubernetes.io/name: nautible-app-ms-stock-batch
+      app.kubernetes.io/instance: nautible-app-ms-stock-batch
+      app.kubernetes.io/version: 1.0.0
+      app.kubernetes.io/component: app
+      app.kubernetes.io/part-of: nautible
+      app.kubernetes.io/managed-by: manual
+    annotations:
+      dapr.io/enabled: "true"
+      dapr.io/app-id: "nautible-app-ms-stock-batch-quantity-check"
+      proxy.istio.io/config: '{ "holdApplicationUntilProxyStarts": true }' # https://github.com/dapr/dapr/issues/2657
+  entrypoint: nautible-app-ms-stock-batch-quantity-check
+  templates:
+    - name: nautible-app-ms-stock-batch-quantity-check
+      container:
+        image: public.ecr.aws/nautible/nautible-app-ms-stock-batch:dummy
+        env:
+          - name: QUARKUS_PICOCLI_TOP_COMMAND
+            value: "quantity-check"
