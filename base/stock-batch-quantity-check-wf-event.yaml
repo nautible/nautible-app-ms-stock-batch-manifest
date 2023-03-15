@@ -16,4 +16,4 @@ spec:
     selector: payload.message != "" && metadata["x-argo-e2e"] == ["true"] && discriminator == "nautible-app-ms-stock-batch-quantity-check"
   submit:
     workflowTemplateRef:
-      name: nautible-app-ms-stock-batch-quantity-check-wf-template
+      name: nautible-app-ms-stock-batch-quantity-check
