@@ -11,7 +11,7 @@ metadata:
     app.kubernetes.io/part-of: nautible
     app.kubernetes.io/managed-by: manual
 spec:
-  metadata:
+  podMetadata:
     labels:
       app.kubernetes.io/name: nautible-app-ms-stock-batch
       app.kubernetes.io/instance: nautible-app-ms-stock-batch
