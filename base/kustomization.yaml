@@ -1,0 +1,3 @@
+resources:
+  - stock-batch-quantity-check-wf-template.yaml
+  - stock-batch-quantity-check-wf-event.yaml

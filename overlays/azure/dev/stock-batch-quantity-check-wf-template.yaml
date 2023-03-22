@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: nautible-app-ms-stock-batch-quantity-check
+  namespace: nautible-app-ms
+spec:
+  templates:
+    - name: nautible-app-ms-stock-batch-quantity-check
+      container:
+        image: nautibledevacr.azurecr.io/nautible-app-ms-stock-batch:3b7615f01888d0c7b13ddebcd707433862fe802d
+        env:
+          - name: QUARKUS_PROFILE
+            value: "azure-dev"
+          - name: QUARKUS_PICOCLI_TOP_COMMAND
+            value: "quantity-check"

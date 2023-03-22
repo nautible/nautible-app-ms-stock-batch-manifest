@@ -1,0 +1,4 @@
+bases:
+  - ../../../base
+patchesStrategicMerge:
+  - stock-batch-quantity-check-wf-template.yaml
