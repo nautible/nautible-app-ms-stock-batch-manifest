@@ -1,0 +1,7 @@
+bases:
+  - ../../../base
+resources:
+  - ./stock-batch-quantity-check-job.yaml
+patchesStrategicMerge:
+  - ./delete-stock-batch-quantity-check-wf-event.yaml
+  - ./delete-stock-batch-quantity-check-wf-template.yaml

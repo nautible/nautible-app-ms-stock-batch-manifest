@@ -1,0 +1,6 @@
+$patch: delete
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: nautible-app-ms-stock-batch-quantity-check
+  namespace: nautible-app-ms

@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowEventBinding
+metadata:
+  name: nautible-app-ms-stock-batch-quantity-check-wf-event
+  namespace: nautible-app-ms
+  labels:
+    app.kubernetes.io/name: nautible-app-ms-stock-batch
+    app.kubernetes.io/instance: nautible-app-ms-stock-batch
+    app.kubernetes.io/version: 1.0.0
+    app.kubernetes.io/component: app
+    app.kubernetes.io/part-of: nautible
+    app.kubernetes.io/managed-by: manual
+spec:
+  event:
+    # metadata header name must be lowercase to match in selector
+    selector: payload.message != "" && metadata["x-argo-e2e"] == ["true"] && discriminator == "nautible-app-ms-stock-batch-quantity-check"
+  submit:
+    workflowTemplateRef:
+      name: nautible-app-ms-stock-batch-quantity-check
