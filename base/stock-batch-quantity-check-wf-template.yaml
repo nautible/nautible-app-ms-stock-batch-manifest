@@ -31,3 +31,5 @@ spec:
         env:
           - name: QUARKUS_PICOCLI_TOP_COMMAND
             value: "quantity-check"
+      serviceAccount: nautible-app-ms-sa
+      serviceAccountName: nautible-app-ms-sa
