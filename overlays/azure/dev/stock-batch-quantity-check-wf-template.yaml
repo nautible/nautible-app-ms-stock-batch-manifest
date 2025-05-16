@@ -7,7 +7,7 @@ spec:
   templates:
     - name: nautible-app-ms-stock-batch-quantity-check
       container:
-        image: nautibledevacr.azurecr.io/nautible-app-ms-stock-batch:1e7edec87cab67141eff767959f2c0500e719e1a
+        image: nautibledevacr.azurecr.io/nautible-app-ms-stock-batch:3001467c2db4b3af88378de890f873c87400801b
         env:
           - name: QUARKUS_PROFILE
             value: "azure-dev"
