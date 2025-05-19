@@ -7,7 +7,7 @@ spec:
   templates:
     - name: nautible-app-ms-stock-batch-quantity-check
       container:
-        image: public.ecr.aws/nautible/nautible-app-ms-stock-batch:3001467c2db4b3af88378de890f873c87400801b
+        image: public.ecr.aws/nautible/nautible-app-ms-stock-batch:d8c864e9ae54c0ee1abc904d8da05f2f6954a3b9
         env:
           - name: QUARKUS_PROFILE
             value: "aws-dev"
