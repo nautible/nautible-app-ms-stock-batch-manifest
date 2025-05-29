@@ -23,6 +23,7 @@ spec:
       dapr.io/enabled: "true"
       dapr.io/app-id: "nautible-app-ms-stock-batch-quantity-check"
       proxy.istio.io/config: '{ "holdApplicationUntilProxyStarts": true }' # https://github.com/dapr/dapr/issues/2657
+      instrumentation.opentelemetry.io/inject-java: 'true'
   entrypoint: nautible-app-ms-stock-batch-quantity-check
   templates:
     - name: nautible-app-ms-stock-batch-quantity-check
